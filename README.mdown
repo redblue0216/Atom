@@ -139,8 +139,4 @@ $ pip install atom-0.1-xxxxxxxxxxxx.whl
 	+ RabbitMQ
 	+ FastAPI
 
-## WebUI
-+ 首页
-![webui](/atom/static/webui.jpg)
-+ 信息页
-![dataui](/atom/static/dataui.jpg)
+
