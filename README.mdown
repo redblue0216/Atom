@@ -138,3 +138,9 @@ $ pip install atom-0.1-xxxxxxxxxxxx.whl
 	+ SQLite3
 	+ RabbitMQ
 	+ FastAPI
+
+## WebUI
++ 首页
+![webui](/atom/static/webui.jpg)
++ 信息页
+![dataui](/atom/static/dataui.jpg)
