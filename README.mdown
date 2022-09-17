@@ -1,0 +1,140 @@
+# Atom
+
+![shields_version](/atom/static/shields_version.svg)![shields_license](/atom/static/shields_license.svg)![shields_author](/atom/static/shields_author.svg)![shiedls_python](/atom/static/shields_python.svg)
+
+![atomsymbol](/atom/static/atomsymbol.JPG)
+
+## 介绍
++ Atom是一种特征管理工具，以数据和算子作为基本概念，数据为基础数据用于训练特征和构建特征；算子为基于固定一个或多个数据集进行新特征生产的流程，可以是一个简单直接计算函数，也可以是一个复杂的算法模型，还可以是算法模型和直接计算相结合的组合体。atom的特色是对由数据衍生的算子进行了数据关联、统一管理，并直接提供了服务功能，使得每个算子可以直接实现在线实时计算特征，为主体算法模型服务，提高模型精度。
+
+
+## 安装
++ Atom采用Python开发，得益于Python良好的社区环境，安装支持Pythonic风格的各种管理器。
+```bash
+$ pip install atom-0.1-xxxxxxxxxxxx.whl
+```
+
+
+
+## 快速指南
++ 首先使用atomctl命令行工具进行工作空间设置和初始化操作。然后分别启动元数据服务和atom主服务(两个服务未支持后台开启)。
+
++ 以下是atomctl命令行示例：
+
+```bash
+	$ atomctl set --workspace 'D:\Workspace\JiYuan\Atom\Demo\test'
+
+	$ atomctl init
+
+	$ atomctl metadata-service 
+
+	$ atomctl start-service 
+````
+
++ 然后就是使用python脚本进行atom的数据和算子操作。主要包括数据和算子的注册、查询、删除三个基本操作以及算子的加载操作
+
+
++ 以下是atom主程脚本代码示例：
+
+```python
+
+	from atom.scheduler import *
+
+	### 加载Atom调度器
+	atom = AtomScheduler(mode='delay')
+
+
+	### register-data测试
+	df = pd.read_csv(r"D:\Workspace\JiYuan\WindPowerForecast\LSTM\demo\merge_data_GDTYUAN_ec.csv")
+	atom.data_register(tag='test',
+	                   belong='first',
+	                   object_name='merge_data_GDTYUAN_ec_1',
+	                   data_object=df,
+	                   remarks='this is a test data!')
+
+	### register-operator测试
+	### 即时模式----装饰器方式
+	# @atom.operator_register(tag='test',
+	#                         belong='first',
+	#                         object_name='test_function_a',
+	#                         remarks='this is a test operator!')
+	def test_function(a,b):
+	    c = a + b * 2 + 1
+	    return c
+	# tmp_a = test_function(1,2)
+	### 及时模式----函数方式
+	# tmp_func = atom.operator_register(tag='test',
+	#                         belong='first',
+	#                         object_name='test_function_b',
+	#                         remarks='this is a test operator!')(test_function)
+	# tmp_b = tmp_func(3,4) 
+	### 延时模式
+	atom.operator_register(tag='test',
+	                       belong='first',
+	                       object_name='test_function_a', ## cc
+	                       operator_object=test_function,
+	                       remarks='this is a test operator!')
+
+
+	# ### data-remove测试
+	# atom.data_remove(tag='test',object_name='merge_data_GDTYUAN_ec_00')
+
+
+	### operator-remove测试
+	# atom.operator_remove(tag='test',object_name='test_function_cc')
+	 
+	                       
+	### data-query测试
+	data_view_df = atom.data_query(tag='test')
+	print(data_view_df)
+
+
+	### operator-query测试
+	operator_view_df = atom.operator_query(tag='test')
+	print(operator_view_df)
+
+
+	### data-modify测试
+	atom.data_modify()
+
+
+	### operator-modify测试
+	atom.operator_modify()
+
+
+	### data-load测试
+	data_load_df = atom.data_load(tag='test',object_name='merge_data_GDTYUAN_ec_1')
+	print(data_load_df)
+
+
+	### operator-load测试
+	operator_load_a = atom.operator_load(tag='test',object_name='test_function_a')
+	print(operator_load_a(10,20))
+	# print(test_function(**{'a':10,'b':20})) ### 字典参数传递
+```
+
++ 最后是算子在线计算服务的使用。当一个算子注册到atom后，他就自动获得了在线计算服务的功能。
+
++ 表单数据格式如下：
+
+```python
+	### 该表单数据仅以python为例展示
+	post_form = {
+    "tag": "test",
+    "object_name": "test_function_a",
+	"data_json": {"a":78,"b":9}
+	}
+```
+
+## 设计
++ 使用工厂模式，解耦计算、存储和通信所使用的第三方工具
++ 设计数据和算子两个基本概念，扩展了特征工程工具的适用范围，一个算子不仅可以直接计算，还可以是复杂算法模型，覆盖特征工程的特征挖掘和关键指标计算管理。
++ 算子一次注册即拥有长效计算服务功能。
++ 算子基于不同数据实现了版本管理，更具有实际意义
++ 技术列表
+	+ 工厂模式
+	+ MinIO
+	+ Bootstrap5
+	+ SQLite3
+	+ RabbitMQ
+	+ FastAPI

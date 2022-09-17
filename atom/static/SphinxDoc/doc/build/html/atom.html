@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>atom package &mdash; atom 0.1 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="code" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> atom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">atom package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.api">atom.api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.base">atom.base module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.cli">atom.cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.config">atom.config module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.manager">atom.manager module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.scheduler">atom.scheduler module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom.utils">atom.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">模块介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">使用示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">类说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-atom">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">atom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">code</a> &raquo;</li>
+      <li>atom package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/atom.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="atom-package">
+<h1>atom package<a class="headerlink" href="#atom-package" title="永久链接至标题">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="module-atom.api">
+<span id="atom-api-module"></span><h2>atom.api module<a class="headerlink" href="#module-atom.api" title="永久链接至标题">¶</a></h2>
+<section id="id1">
+<h3>模块介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<p>这是一个atom服务应用类，主要使用fastapi搭建ASGI服务器</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>无</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）fastapi</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）atom服务应用</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3>使用示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id3">
+<h3>类说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.api.FeatureComputerParam">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.api.</span></span><span class="sig-name descname"><span class="pre">FeatureComputerParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'hello'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'world'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.api.FeatureComputerParam" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个特征计算参数数据模型类，主要包括算子标签tag,对象名称object_name和数据字典data_json</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="atom.api.FeatureComputerParam.data_json">
+<span class="sig-name descname"><span class="pre">data_json</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#atom.api.FeatureComputerParam.data_json" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="atom.api.FeatureComputerParam.object_name">
+<span class="sig-name descname"><span class="pre">object_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#atom.api.FeatureComputerParam.object_name" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="atom.api.FeatureComputerParam.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#atom.api.FeatureComputerParam.tag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="atom.api.atom">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.api.</span></span><span class="sig-name descname"><span class="pre">atom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">starlette.requests.Request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.api.atom" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="atom.api.data_query">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.api.</span></span><span class="sig-name descname"><span class="pre">data_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.api.data_query" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="atom.api.feature_compute">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.api.</span></span><span class="sig-name descname"><span class="pre">feature_compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_computer_param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#atom.api.FeatureComputerParam" title="atom.api.FeatureComputerParam"><span class="pre">atom.api.FeatureComputerParam</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.api.feature_compute" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="atom.api.operator_query">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.api.</span></span><span class="sig-name descname"><span class="pre">operator_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.api.operator_query" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="module-atom.base">
+<span id="atom-base-module"></span><h2>atom.base module<a class="headerlink" href="#module-atom.base" title="永久链接至标题">¶</a></h2>
+<section id="id4">
+<h3>模块介绍<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>这是一个atom基础类模块，主要包括数据抽象类和算子抽象类</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>（1）  无</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）abstractmethod</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）抽象接口</p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h3>使用示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3>类说明<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.base.CommunicationBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.base.</span></span><span class="sig-name descname"><span class="pre">CommunicationBase</span></span><a class="headerlink" href="#atom.base.CommunicationBase" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个通信抽象类，主要提供生产消费确认消费三种功能接口</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.CommunicationBase.consume">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">consume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.CommunicationBase.consume" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个消费抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.CommunicationBase.produce">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">produce</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.CommunicationBase.produce" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个生产抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.base.DataBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.base.</span></span><span class="sig-name descname"><span class="pre">DataBase</span></span><a class="headerlink" href="#atom.base.DataBase" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个数据抽象类，主要提供增删改查四种管理功能接口</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.DataBase.modify">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.DataBase.modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个修改抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.DataBase.query">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.DataBase.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.DataBase.register">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.DataBase.register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个注册抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.DataBase.remove">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.DataBase.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.base.OperatorBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.base.</span></span><span class="sig-name descname"><span class="pre">OperatorBase</span></span><a class="headerlink" href="#atom.base.OperatorBase" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个数据抽象类，主要提供增删改查四种管理功能接口</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.OperatorBase.modify">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.OperatorBase.modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个修改抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.OperatorBase.query">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.OperatorBase.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.OperatorBase.register">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.OperatorBase.register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个注册抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.OperatorBase.remove">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.OperatorBase.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.OperatorBase.run">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.OperatorBase.run" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个运行抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.base.StoreBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.base.</span></span><span class="sig-name descname"><span class="pre">StoreBase</span></span><a class="headerlink" href="#atom.base.StoreBase" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个存储抽象类，主要提供上传下载功能接口</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.StoreBase.get">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.StoreBase.get" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个下载抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.StoreBase.put">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.StoreBase.put" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个上传抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.StoreBase.query">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.StoreBase.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.base.StoreBase.remove">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.base.StoreBase.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除抽象方法</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-atom.cli">
+<span id="atom-cli-module"></span><h2>atom.cli module<a class="headerlink" href="#module-atom.cli" title="永久链接至标题">¶</a></h2>
+<section id="id7">
+<h3>模块介绍<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>这是一个atom常用命令行接口类</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>无</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）click</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）atom程序管理</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3>使用示例<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3>类说明<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="module-atom.config">
+<span id="atom-config-module"></span><h2>atom.config module<a class="headerlink" href="#module-atom.config" title="永久链接至标题">¶</a></h2>
+<section id="id10">
+<h3>模块介绍<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>这是一个配置类，主要功能设置环境变量和初始化，主要技术静态方法</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>（1）  无</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）静态方法</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）设置环境变量和初始化</p>
+</div></blockquote>
+</section>
+<section id="id11">
+<h3>使用示例<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3>类说明<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.config.Setup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.config.</span></span><span class="sig-name descname"><span class="pre">Setup</span></span><a class="headerlink" href="#atom.config.Setup" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个配置类，主要功能设置环境变量和初始化，主要技术静态方法</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.config.Setup.initialization">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.config.Setup.initialization" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个初始化的静态方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>无</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.config.Setup.set_workspace">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_workspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_workspace</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.config.Setup.set_workspace" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个设置环境变量的静态方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>atom_workspace (str): atom工作空间环境变量</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-atom.manager">
+<span id="atom-manager-module"></span><h2>atom.manager module<a class="headerlink" href="#module-atom.manager" title="永久链接至标题">¶</a></h2>
+<section id="id13">
+<h3>模块介绍<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>这是一个atom管理器工厂类，主要包括数据模型、算子模型、存储模型和通信模型的具体操作方法，主要使用类方法和内部类实现工厂模式</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>（1）  工厂模式</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）classmethod</p>
+<p>（2）内部类</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）实现数据模型、算子模型、存储模型和通信模型的具体操作方法</p>
+</div></blockquote>
+</section>
+<section id="id14">
+<h3>使用示例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id15">
+<h3>类说明<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.manager.</span></span><span class="sig-name descname"><span class="pre">ManagerFactory</span></span><a class="headerlink" href="#atom.manager.ManagerFactory" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个管理各种操作方法的工厂类，主要功能提供数据模型、算子模型、存储模型和通信模型的具体操作，主要技术使用类方法和内部类实现工厂模式</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.CommunicationModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CommunicationModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.CommunicationModel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference internal" href="#atom.base.CommunicationBase" title="atom.base.CommunicationBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">atom.base.CommunicationBase</span></code></a></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个通信模型具体实现类，主要提供生产消费确认消费三种功能</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.CommunicationModel.consume">
+<span class="sig-name descname"><span class="pre">consume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.CommunicationModel.consume" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个生产者方法，用来向消息中间件推送数据</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>queue_name (str): 消息队列名称</p>
+</dd>
+<dt>返回：</dt><dd><p>consume_data (objcet): 待消费消息队列的第一个数据</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.CommunicationModel.produce">
+<span class="sig-name descname"><span class="pre">produce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queue_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.CommunicationModel.produce" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个生产者方法，用来向消息中间件推送数据</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>queue_name (str): 消息队列名称
+message (json_dumps): 序列化后的json串</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.DataModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DataModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.DataModel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference internal" href="#atom.base.DataBase" title="atom.base.DataBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">atom.base.DataBase</span></code></a></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个数据模型具体实现类，主要提供增删改查四种管理功能</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.DataModel.modify">
+<span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.DataModel.modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个修改具体实现方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.DataModel.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.DataModel.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据模型标签</p>
+</dd>
+<dt>返回：</dt><dd><p>view_df (DataFrame): 查询数据</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.DataModel.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">belong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no</span> <span class="pre">remarks'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.DataModel.register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个注册具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据集名称
+belong (str): 所属项目名称
+object_name (str): 存储对象文件名称
+remarks (str): 备注</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.DataModel.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.DataModel.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据模型标签
+object_name (str): 对象名称，可用于版本控制</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OperatorModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference internal" href="#atom.base.OperatorBase" title="atom.base.OperatorBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">atom.base.OperatorBase</span></code></a></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个算子模型具体实现类，主要提供增删改查运行五种管理功能</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel.modify">
+<span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel.modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个修改具体实现方法</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据模型标签</p>
+</dd>
+<dt>返回：</dt><dd><p>view_df (DataFrame): 查询数据</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">belong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no</span> <span class="pre">remarks'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel.register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个注册具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据集名称
+belong (str): 所属项目名称
+object_name (str): 存储对象文件名称
+remarks (str): 备注</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除具体实现方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 算子模型标签
+object_name (str): 对象名称，可用于版本控制</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.OperatorModel.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.OperatorModel.run" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个运行函数对象的方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>func_obj (object): 函数对象</p>
+</dd>
+<dt>返回：</dt><dd><p>result (object): 函数结果对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StoreModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<a class="reference internal" href="#atom.base.StoreBase" title="atom.base.StoreBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">atom.base.StoreBase</span></code></a></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个存储模型具体实现类，主要提供上传下载删除查询四种管理功能</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.get" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个获取数据方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>bucket_name (str): 对象存储中桶的名称
+object_name (str): 二进制数据对象名称</p>
+</dd>
+<dt>返回：</dt><dd><p>bytes_obj (object): 二进制数据对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.inverse_transform_from_bytes">
+<span class="sig-name descname"><span class="pre">inverse_transform_from_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bytes_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.inverse_transform_from_bytes" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个将对象序列化的方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>bytes_obj (bytes): 序列化后的二进制对象</p>
+</dd>
+<dt>返回：</dt><dd><p>obj (Object): 需要序列化目标对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bytes_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.put" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个上传数据方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>bucket_name (str): 对象存储中桶的名称
+object_name (str): 二进制数据对象名称
+bytes_obj (object): 二进制对象</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个查询数据方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>bucket_name (str): 对象存储中桶的名称
+object_name (str): 二进制数据对象名称</p>
+</dd>
+<dt>返回：</dt><dd><p>info_object (Object): 存储数据信息对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个删除数据方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>bucket_name (str): 对象存储中桶的名称
+object_name (str): 二进制数据对象名称</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.StoreModel.transform_to_bytes">
+<span class="sig-name descname"><span class="pre">transform_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.StoreModel.transform_to_bytes" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个将对象序列化的方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>obj (Object): 需要序列化目标对象</p>
+</dd>
+<dt>返回：</dt><dd><p>bytes_obj (bytes): 序列化后的二进制对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.create_communication_model">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_communication_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.create_communication_model" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个创建通信模型实例的类方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>connection (Object): 对象存储MinIO连接对象</p>
+</dd>
+<dt>返回：</dt><dd><p>CommunicationModel (Object): 存储模型实例对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.create_data_model">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_data_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.create_data_model" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个创建数据模型实例的类方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>connection (Object): 数据库连接对象</p>
+</dd>
+<dt>返回：</dt><dd><p>DataModel (Object): 数据模型实例对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.create_operator_model">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_operator_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.create_operator_model" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个创建算子模型实例的类方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>connection (Object): 数据库连接对象</p>
+</dd>
+<dt>返回：</dt><dd><p>OperatorModel (Object): 数据模型实例对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.manager.ManagerFactory.create_store_model">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_store_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.manager.ManagerFactory.create_store_model" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个创建存储模型实例的类方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>connection (Object): 对象存储MinIO连接对象</p>
+</dd>
+<dt>返回：</dt><dd><p>OperatorModel (Object): 存储模型实例对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-atom.scheduler">
+<span id="atom-scheduler-module"></span><h2>atom.scheduler module<a class="headerlink" href="#module-atom.scheduler" title="永久链接至标题">¶</a></h2>
+<section id="id16">
+<h3>模块介绍<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>这是一个atom管理调度类模块，主要包括注册、删除、查询、修改、加载五大操作功能，主要技术采用装饰器模式和静态方法</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>（1）  装饰器模式</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）装饰器技术</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）功能接口</p>
+</div></blockquote>
+</section>
+<section id="id17">
+<h3>使用示例<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id18">
+<h3>类说明<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.scheduler.</span></span><span class="sig-name descname"><span class="pre">AtomScheduler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'delay'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个管理器调度类，主要功能管理Atom的整体操作，包括注册、删除、查询、修改、加载五大操作功能，主要技术采用装饰器模式和静态方法</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.data_load">
+<span class="sig-name descname"><span class="pre">data_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.data_load" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个数据加载方法，主要功能从远端存储加载数据对象</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据标签
+object_name (str): 对象名称</p>
+</dd>
+<dt>返回：</dt><dd><p>data_obj (objcet): 数据对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.data_modify">
+<span class="sig-name descname"><span class="pre">data_modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.data_modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个数据修改方法，未开发，敬请期待</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>无</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.data_query">
+<span class="sig-name descname"><span class="pre">data_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.data_query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个已注册数据查询方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据标签</p>
+</dd>
+<dt>返回：</dt><dd><p>view_df (DataFrame): 已注册数据查询表单</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.data_register">
+<span class="sig-name descname"><span class="pre">data_register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">belong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no</span> <span class="pre">remark'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.data_register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个数据注册方法，主要功能存储数据元信息和数据对象</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据标签
+belong (str): 数据所属项目名称
+object_name (str): 对象名称
+data_object (object): 数据对象
+remarks (str): 备注</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.data_remove">
+<span class="sig-name descname"><span class="pre">data_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.data_remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个数据删除方法，主要根据数据标签和数据对象名称来删除对象，数据对象名称未来可用于版本控制</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据标签
+object_name (str): 对象名称，可用于版本控制</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.operator_load">
+<span class="sig-name descname"><span class="pre">operator_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.operator_load" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个算子加载方法，主要功能从远端存储加载算子对象</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 数据标签
+object_name (str): 对象名称</p>
+</dd>
+<dt>返回：</dt><dd><p>operator_obj (objcet): 数据对象</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.operator_modify">
+<span class="sig-name descname"><span class="pre">operator_modify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.operator_modify" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个算子修改方法，未开发，敬请期待</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>无</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.operator_query">
+<span class="sig-name descname"><span class="pre">operator_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.operator_query" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个已注册算子查询方法</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 算子标签</p>
+</dd>
+<dt>返回：</dt><dd><p>view_df (DataFrame): 已注册算子查询表单</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.operator_register">
+<span class="sig-name descname"><span class="pre">operator_register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">belong</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no</span> <span class="pre">remark'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.operator_register" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个算子注册方法，主要功能存储算子元信息和算子对象，主要技术装饰器技术</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 算子标签
+belong (str): 算子所属数据项目名称
+object_name (str): 对象名称
+operator_object (object): 算子对象
+remarks (str): 备注</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="atom.scheduler.AtomScheduler.operator_remove">
+<span class="sig-name descname"><span class="pre">operator_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.scheduler.AtomScheduler.operator_remove" title="永久链接至目标">¶</a></dt>
+<dd><p>方法功能：</p>
+<blockquote>
+<div><p>定义一个算子删除方法，主要根据算子标签和算子对象名称来删除对象，算子对象名称未来可用于版本控制</p>
+</div></blockquote>
+<dl class="simple">
+<dt>参数：</dt><dd><p>tag (str): 算子标签
+object_name (str): 对象名称，可用于版本控制</p>
+</dd>
+<dt>返回：</dt><dd><p>无</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-atom.utils">
+<span id="atom-utils-module"></span><h2>atom.utils module<a class="headerlink" href="#module-atom.utils" title="永久链接至标题">¶</a></h2>
+<section id="id19">
+<h3>模块介绍<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<p>这是一个辅助类，主要功能实现各种外部依赖工具功能，主要技术内部类和with上下文管理器</p>
+<p>设计模式：</p>
+<blockquote>
+<div><p>（1）  无</p>
+</div></blockquote>
+<p>关键点：</p>
+<blockquote>
+<div><p>（1）with上下文管理器</p>
+<p>（2）内部类</p>
+</div></blockquote>
+<p>主要功能：</p>
+<blockquote>
+<div><p>（1）实现各种外部依赖工具功能</p>
+</div></blockquote>
+</section>
+<section id="id20">
+<h3>使用示例<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id21">
+<h3>类说明<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.utils.dbconnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.utils.</span></span><span class="sig-name descname"><span class="pre">dbconnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.utils.dbconnection" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个数据库连接器管理类</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.utils.minioconnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.utils.</span></span><span class="sig-name descname"><span class="pre">minioconnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.utils.minioconnection" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个消息中间件连接器管理类</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="atom.utils.mqconnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atom.utils.</span></span><span class="sig-name descname"><span class="pre">mqconnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#atom.utils.mqconnection" title="永久链接至目标">¶</a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>类介绍：</p>
+<blockquote>
+<div><p>这是一个消息中间件连接器管理类</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-atom">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-atom" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, shihua.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
