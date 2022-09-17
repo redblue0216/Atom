@@ -1,0 +1,4 @@
+include atom/doc/README.mdown
+graft atom/static
+graft atom/templates
+graft atom/data
