@@ -127,6 +127,8 @@ $ pip install atom-0.1-xxxxxxxxxxxx.whl
 ```
 
 ## 设计
++ 图片
+![webui](/atom/static/webui.JPG)
 + 使用工厂模式，解耦计算、存储和通信所使用的第三方工具
 + 设计数据和算子两个基本概念，扩展了特征工程工具的适用范围，一个算子不仅可以直接计算，还可以是复杂算法模型，覆盖特征工程的特征挖掘和关键指标计算管理。
 + 算子一次注册即拥有长效计算服务功能。
@@ -138,5 +140,4 @@ $ pip install atom-0.1-xxxxxxxxxxxx.whl
 	+ SQLite3
 	+ RabbitMQ
 	+ FastAPI
-
 
