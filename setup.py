@@ -13,7 +13,7 @@ setup(
         packages = find_packages(),
         include_package_data = True,
         description = 'Atom is a feature engineering tool.',
-        # install_requires = ['click','fastapi','pika','minio','rich','dill'],
+        # install_requires = ['click','fastapi','pika','minio','rich','dill','sqlite-web'],
 
         ### 包接入点，命令行索引
         entry_points = {
